@@ -39,7 +39,6 @@ def replyToMessage():
     if num_divi_messages <= divi_message_pos:
         return jsonify("Divi is your financial companion!"), 200
     cur_message = divi_messages[divi_message_pos]
-    print("The current message is: ", cur_message)
     divi_message_pos += 1
     return jsonify(cur_message), 200
 
