@@ -29,6 +29,7 @@
 
 .enterMessageDiv {
     padding-left: 20%;
+    float: bottom;
 }
 
 .btnSend {

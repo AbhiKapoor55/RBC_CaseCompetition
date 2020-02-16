@@ -30,10 +30,19 @@ function sendMessage(e){
 		return response.json()
 	}).then((res) => {
 	    //console.log(res)
+	    wait(3000)
 	    addServerMessageToDOM(res)
 	}).catch((err) => {
 	  console.log("There was an error, ", err)
 	})
+}
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
 }
 
 function addUserMessageToDOM(e){
@@ -61,10 +70,12 @@ function addUserMessageToDOM(e){
 	newDiv.appendChild(img)
 	newDiv.appendChild(p)
 
-	document.body.appendChild(newDiv)
+	const container = document.getElementsByClassName("messageContainer")[0]
+	container.appendChild(newDiv)
 }
 
 function addServerMessageToDOM(e){
+
 	const newDiv = document.createElement("div")
 	newDiv.className = "container darker"
 	//const img = document.createElement("img")
@@ -85,24 +96,14 @@ function addServerMessageToDOM(e){
 	newDiv.appendChild(img)
 	newDiv.appendChild(p)
 
-	document.body.appendChild(newDiv)
+	const container = document.getElementsByClassName("messageContainer")[0]
+	container.appendChild(newDiv)
+	//document.body.appendChild(newDiv)
 }
 
 function deleteAllMessages(e){
-	const messageContainer = document.getElementsByClassName("container")
-	const parentElement = messageContainer[0].parentElement 
 
-	for(let i = 0;i<messageContainer.length;i++){
-		parentElement.removeChild(messageContainer[i])
-	}
-
-	const messageContainer2 = document.getElementsByClassName("container darker")
-	const parentElement2 = messageContainer2[0].parentElement 
-
-	for(let i = 0;i<messageContainer2.length;i++){
-		parentElement2.removeChild(messageContainer2[i])
-	}
-	const url = '/reset'
+    const url = '/reset'
 	fetch(url).then((response) => {
 	    if (response.status == 200){
 	        return response.json
@@ -116,5 +117,20 @@ function deleteAllMessages(e){
 	}).catch((err) => {
 	    console.log("There was an error, ", err)
 	})
+
+	const messageContainer = document.getElementsByClassName("container")
+	const parentElement = document.getElementsByClassName("messageContainer")[0]
+
+	for(let i = 0;i<messageContainer.length;i++){
+		parentElement.removeChild(messageContainer[i])
+	}
+
+	const messageContainer2 = document.getElementsByClassName("container darker")
+
+	for(let i = 0;i<messageContainer2.length;i++){
+		parentElement.removeChild(messageContainer2[i])
+	}
+	document.getElementsByClassName("enterMessage")[0].value = ""
+
 }
 
