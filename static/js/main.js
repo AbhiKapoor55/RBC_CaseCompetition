@@ -14,3 +14,7 @@ function launchDivi(e){
 	})
 }
 
+function sendMessage(e){
+	console.log("SENDING MESSAGE...")
+}
+

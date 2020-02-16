@@ -1,5 +1,3 @@
- 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,29 +10,42 @@
 
   	</div>
 
-  	<div class="container">
-  		<img src="images/icon.jpg" alt="Avatar">
-  		<p>Hello. How are you today?</p>
-  		<span class="time-right">11:00</span>
-	</div>
+  	<div class="messageContainer">
+  		
+  		<div class="container">
+  			<img src="images/icon.jpg" alt="Avatar">
+  			<p>Hello. How are you today?</p>
+  			<span class="time-right">11:00</span>
+		</div>
 
-	<div class="container darker">
-	  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
-	  <p>Hey! I'm fine. Thanks for asking!</p>
-	  <span class="time-left">11:01</span>
-	</div>
+		<div class="container darker">
+		  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+		  <p>Hey! I'm fine. Thanks for asking!</p>
+		  <span class="time-left">11:01</span>
+		</div>
 
-	<div class="container">
-	  <img src="images/icon.jpg" alt="Avatar">
-	  <p>Sweet! So, what do you wanna do today?</p>
-	  <span class="time-right">11:02</span>
-	</div>
+		<div class="container">
+		  <img src="images/icon.jpg" alt="Avatar">
+		  <p>Sweet! So, what do you wanna do today?</p>
+		  <span class="time-right">11:02</span>
+		</div>
 
-	<div class="container darker">
-	  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
-	  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-	  <span class="time-left">11:05</span>
-	</div> 
+		<div class="container darker">
+		  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right">
+		  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+		  <span class="time-left">11:05</span>
+		</div>
+
+  	</div> 
+
+  	<div>
+  		<form class="enterMessageDiv">
+  			<label for="fname">Write a message here...</label><br>
+  			<input class="enterMessage" type="text" id="fname" name="fname"><br>
+		</form> 
+		<button type="button" class="button" onclick="sendMessage()">Send --></button> 
+  	</div>
     
+    <script src="js/main.js"></script>
   </body>
 </html>

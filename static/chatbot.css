@@ -15,6 +15,20 @@
   height: 10%;
 }
 
+.enterMessage {
+  width: 600px;
+  height: 30px;
+}
+
+.enterMessageDiv {
+    padding-left: 20%;
+}
+
+.btnSend {
+  display: inline-block;
+  text-align: center;
+}
+
 /* Clear floats */
 .container::after {
   content: "";
