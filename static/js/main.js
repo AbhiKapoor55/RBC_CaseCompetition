@@ -70,10 +70,12 @@ function addUserMessageToDOM(e){
 	newDiv.appendChild(img)
 	newDiv.appendChild(p)
 
-	document.body.appendChild(newDiv)
+	const container = document.getElementsByClassName("messageContainer")[0]
+	container.appendChild(newDiv)
 }
 
 function addServerMessageToDOM(e){
+
 	const newDiv = document.createElement("div")
 	newDiv.className = "container darker"
 	//const img = document.createElement("img")
@@ -94,22 +96,26 @@ function addServerMessageToDOM(e){
 	newDiv.appendChild(img)
 	newDiv.appendChild(p)
 
-	document.body.appendChild(newDiv)
+	const container = document.getElementsByClassName("messageContainer")[0]
+	container.appendChild(newDiv)
+	//document.body.appendChild(newDiv)
 }
 
 function deleteAllMessages(e){
 	const messageContainer = document.getElementsByClassName("container")
-	const parentElement = messageContainer[0].parentElement 
+	const parentElement = document.getElementsByClassName("messageContainer")[0]
 
 	for(let i = 0;i<messageContainer.length;i++){
 		parentElement.removeChild(messageContainer[i])
 	}
 
 	const messageContainer2 = document.getElementsByClassName("container darker")
-	const parentElement2 = messageContainer2[0].parentElement 
 
 	for(let i = 0;i<messageContainer2.length;i++){
-		parentElement2.removeChild(messageContainer2[i])
+		parentElement.removeChild(messageContainer2[i])
 	}
+
+	document.getElementsByClassName("enterMessage")[0].value = ""
+
 }
 
