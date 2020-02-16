@@ -90,6 +90,17 @@ function addServerMessageToDOM(e){
 
 function deleteAllMessages(e){
 	const messageContainer = document.getElementsByClassName("container")
-	document.removeChild(messageContainer) 
+	const parentElement = messageContainer[0].parentElement 
+
+	for(let i = 0;i<messageContainer.length;i++){
+		parentElement.removeChild(messageContainer[i])
+	}
+
+	const messageContainer2 = document.getElementsByClassName("container darker")
+	const parentElement2 = messageContainer2[0].parentElement 
+
+	for(let i = 0;i<messageContainer2.length;i++){
+		parentElement2.removeChild(messageContainer2[i])
+	}
 }
 
