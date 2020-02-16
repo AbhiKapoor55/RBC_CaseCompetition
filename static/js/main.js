@@ -15,6 +15,18 @@ function launchDivi(e){
 }
 
 function sendMessage(e){
-	console.log("SENDING MESSAGE...")
+	var message = document.getElementsByClassName("enterMessage")[0].value;
+	console.log("SENDING MESSAGE: " + message + "...")
+
+	const url = "/message"
+
+	fetch(url).then((response) => {
+		console.log(response)
+		if(response.status === 200){
+			console.log("received message from server")
+		} else {
+			console.log("Error Occurred: Response Code was not 200")
+		}
+	})
 }
 

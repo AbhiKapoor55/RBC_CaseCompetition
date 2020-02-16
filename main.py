@@ -23,6 +23,10 @@ def home():
 def launchDivi():
     return redirect(url_for('static', filename='chatbot.html'))
 
+@app.route('/message', methods=['GET'])
+def replyToMessage():
+    return "This is a reply message from the server!", 200
+
 
 def readTransactionData(fileName: str) -> List[Dict]:
     """Given the complete name of a JSON file such as johnsTransactions.json, this function finds the file and reads it
