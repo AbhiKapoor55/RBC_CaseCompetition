@@ -24,7 +24,7 @@ function sendMessage(e){
 		console.log(response)
 		if(response.status === 200){
 			console.log("received message from server")
-			addServerMessageToDOM()
+			addServerMessageToDOM("Testing123")
 		} else {
 			console.log("Error Occurred: Response Code was not 200")
 		}
@@ -63,7 +63,7 @@ function addServerMessageToDOM(e){
 	newDiv.className = "container darker"
 	//const img = document.createElement("img")
 	const p = document.createElement("p")
-	p.appendChild(document.createTextNode("this is a reply from the server"))
+	p.appendChild(document.createTextNode(e))
 
 	const img = document.createElement("img")
 	img.src="images/diviIcon.png"
