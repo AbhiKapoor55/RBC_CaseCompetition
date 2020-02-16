@@ -30,10 +30,19 @@ function sendMessage(e){
 		return response.json()
 	}).then((res) => {
 	    //console.log(res)
+	    wait(3000)
 	    addServerMessageToDOM(res)
 	}).catch((err) => {
 	  console.log("There was an error, ", err)
 	})
+}
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
 }
 
 function addUserMessageToDOM(e){
