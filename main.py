@@ -2,6 +2,7 @@ from flask import Flask, url_for, render_template, request, Response, redirect, 
 from flask_static_compress import FlaskStaticCompress
 from typing import Dict, List
 import json
+import datetime
 
 app = Flask(__name__)
 app.config['COMPRESSOR_DEBUG'] = app.config.get('DEBUG')
@@ -53,8 +54,17 @@ def writeTransactionData(fileName: str, data: List ) -> None:
         print("There was an invalid file name provided.")
         return
 
+def analyzeTransactionData(clientData: List[Dict], similarClients: List[List[Dict]]) -> Dict:
+    """Given an object representing the client's transactions, and an list containing elements representing transactions
+     of similar clients, this function outputs an object representing predictions for the client's future spending."""
+
+    #Part 1: Analyze the client's own behavior
+    #x = datetime.datetime("2020-01-31T23:48:36.969Z")
+    #print(x)
+
 
 if __name__ == "__main__":
     existingTransactions = readTransactionData("johnsTransactions.json")
     writeTransactionData("junweisTransactions.json", existingTransactions)
+    analyzeTransactionData([], [])
     app.run(debug=True)
