@@ -30,19 +30,18 @@ def launchDivi():
 def replyToMessage():
     global divi_message_pos
     global num_divi_messages
-    print("Reached reply to message function")
     try:
         divi_messages = readTransactionData("divisScript.json")
     except:
         print("There was an issue reading the message data")
-        return "", 500
+        return jsonify(""), 500
     num_divi_messages = len(divi_messages) # Update the number of messages
     if num_divi_messages <= divi_message_pos:
-        return "Divi is your financial companion!", 200
+        return jsonify("Divi is your financial companion!"), 200
     cur_message = divi_messages[divi_message_pos]
     print("The current message is: ", cur_message)
     divi_message_pos += 1
-    return cur_message, 200
+    return jsonify(cur_message), 200
 
 
 def readTransactionData(fileName: str) -> List[Dict]:

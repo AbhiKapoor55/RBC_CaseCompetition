@@ -24,10 +24,15 @@ function sendMessage(e){
 		console.log(response)
 		if(response.status === 200){
 			console.log("received message from server")
-			addServerMessageToDOM("Testing123")
 		} else {
 			console.log("Error Occurred: Response Code was not 200")
 		}
+		return response.json()
+	}).then((res) => {
+	    console.log(res)
+	    addServerMessageToDOM(res)
+	}).catch((err) => {
+	  console.log("There was an error, ", err)
 	})
 }
 
