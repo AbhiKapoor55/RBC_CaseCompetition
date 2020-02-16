@@ -29,7 +29,7 @@ function sendMessage(e){
 		}
 		return response.json()
 	}).then((res) => {
-	    console.log(res)
+	    //console.log(res)
 	    addServerMessageToDOM(res)
 	}).catch((err) => {
 	  console.log("There was an error, ", err)
