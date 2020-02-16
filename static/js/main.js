@@ -102,5 +102,19 @@ function deleteAllMessages(e){
 	for(let i = 0;i<messageContainer2.length;i++){
 		parentElement2.removeChild(messageContainer2[i])
 	}
+	const url = '/reset'
+	fetch(url).then((response) => {
+	    if (response.status == 200){
+	        return response.json
+	    }
+	    else {
+	        console.log("There was an error ", response.status)
+	        return response.json
+	    }
+	}).then((result) => {
+	    console.log("Reached result: ", result)
+	}).catch((err) => {
+	    console.log("There was an error, ", err)
+	})
 }
 

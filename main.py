@@ -26,6 +26,13 @@ def home():
 def launchDivi():
     return redirect(url_for('static', filename='chatbot.html'))
 
+@app.route('/reset', methods=["GET"])
+def resetDIVI():
+    global divi_message_pos
+    divi_message_pos = 0
+    return jsonify("Successful reset of DIVI", 200)
+
+
 @app.route('/message', methods=['GET'])
 def replyToMessage():
     global divi_message_pos
@@ -37,6 +44,7 @@ def replyToMessage():
         return jsonify(""), 500
     num_divi_messages = len(divi_messages) # Update the number of messages
     if num_divi_messages <= divi_message_pos:
+        divi_message_pos = 0
         return jsonify("Divi is your financial companion!"), 200
     cur_message = divi_messages[divi_message_pos]
     divi_message_pos += 1
