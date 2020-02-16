@@ -117,14 +117,5 @@ function deleteAllMessages(e){
 	}).catch((err) => {
 	    console.log("There was an error, ", err)
 	})
-
-	const messageContainer = document.getElementsByClassName("container")
-	const parentElement = document.getElementsByClassName("messageContainer")[0]
-
-	const messageContainer2 = document.getElementsByClassName("container darker")
-
-	document.body.removeChild(parentElement)
-	document.getElementsByClassName("enterMessage")[0].value = ""
-
 }
 
