@@ -121,15 +121,9 @@ function deleteAllMessages(e){
 	const messageContainer = document.getElementsByClassName("container")
 	const parentElement = document.getElementsByClassName("messageContainer")[0]
 
-	for(let i = 0;i<messageContainer.length;i++){
-		parentElement.removeChild(messageContainer[i])
-	}
-
 	const messageContainer2 = document.getElementsByClassName("container darker")
 
-	for(let i = 0;i<messageContainer2.length;i++){
-		parentElement.removeChild(messageContainer2[i])
-	}
+	document.body.removeChild(parentElement)
 	document.getElementsByClassName("enterMessage")[0].value = ""
 
 }
