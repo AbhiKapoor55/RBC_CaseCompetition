@@ -4,6 +4,9 @@ from typing import Dict, List
 import json
 import datetime
 
+divi_message_pos = 0
+num_divi_messages = 0
+
 app = Flask(__name__)
 app.config['COMPRESSOR_DEBUG'] = app.config.get('DEBUG')
 app.config['COMPRESSOR_STATIC_PREFIX'] = 'static'
@@ -25,7 +28,21 @@ def launchDivi():
 
 @app.route('/message', methods=['GET'])
 def replyToMessage():
-    return "This is a reply message from the server!", 200
+    global divi_message_pos
+    global num_divi_messages
+    print("Reached reply to message function")
+    try:
+        divi_messages = readTransactionData("divisScript.json")
+    except:
+        print("There was an issue reading the message data")
+        return "", 500
+    num_divi_messages = len(divi_messages) # Update the number of messages
+    if num_divi_messages <= divi_message_pos:
+        return "Divi is your financial companion!", 200
+    cur_message = divi_messages[divi_message_pos]
+    print("The current message is: ", cur_message)
+    divi_message_pos += 1
+    return cur_message, 200
 
 
 def readTransactionData(fileName: str) -> List[Dict]:
@@ -58,17 +75,11 @@ def writeTransactionData(fileName: str, data: List ) -> None:
         print("There was an invalid file name provided.")
         return
 
-def analyzeTransactionData(clientData: List[Dict], similarClients: List[List[Dict]]) -> Dict:
-    """Given an object representing the client's transactions, and an list containing elements representing transactions
-     of similar clients, this function outputs an object representing predictions for the client's future spending."""
-
-    #Part 1: Analyze the client's own behavior
-    #x = datetime.datetime("2020-01-31T23:48:36.969Z")
-    #print(x)
-
 
 if __name__ == "__main__":
-    existingTransactions = readTransactionData("ourScript.json")
-    writeTransactionData("junweisTransactions.json", existingTransactions)
-    analyzeTransactionData([], [])
+    # for i in range(20):
+    #     reply = replyToMessage()
+    #     print(reply)
+    #existingTransactions = readTransactionData("ourScript.json")
+    #writeTransactionData("junweisTransactions.json", existingTransactions)
     app.run(debug=True)
