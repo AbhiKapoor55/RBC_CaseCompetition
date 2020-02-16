@@ -7,7 +7,7 @@ function launchDivi(e){
 	fetch(url).then((response) => {
 		console.log(response)
 		if(response.status === 200){
-			console.log("received response")
+			//console.log("received response")
 		} else {
 			console.log("Error Occurred: Response code was not 200")
 		}
@@ -16,20 +16,20 @@ function launchDivi(e){
 
 function sendMessage(e){
 	var message = document.getElementsByClassName("enterMessage")[0].value;
-	console.log("SENDING MESSAGE: " + message + "...")
+	//console.log("SENDING MESSAGE: " + message + "...")
 
 	const url = "/message"
 	addUserMessageToDOM()
 	fetch(url).then((response) => {
-		console.log(response)
+		//console.log(response)
 		if(response.status === 200){
-			console.log("received message from server")
+			//console.log("received message from server")
 		} else {
-			console.log("Error Occurred: Response Code was not 200")
+			console.log("Error Occurred: Response Code was not 200 ", response.status)
 		}
 		return response.json()
 	}).then((res) => {
-	    console.log(res)
+	    //console.log(res)
 	    addServerMessageToDOM(res)
 	}).catch((err) => {
 	  console.log("There was an error, ", err)
@@ -39,7 +39,7 @@ function sendMessage(e){
 function addUserMessageToDOM(e){
 
 	const textEntered = document.getElementsByClassName("enterMessage")[0].value; 
-	console.log("textentere is " + textEntered)
+	//console.log("textentere is " + textEntered)
 
 	const newDiv = document.createElement("div")
 	newDiv.className = "container"
