@@ -21,7 +21,8 @@
   font-size: 22px; 
   font-family: copperplate; 
   color: black;
-  padding-left: 15px; 
+  padding-left: 15px;
+  padding-bottom: 30px;
 }
 
 .enterMessage {
@@ -31,7 +32,10 @@
 
 .enterMessageDiv {
     padding-left: 20%;
-    float: bottom;
+    position: fixed;
+    bottom: 30px;
+    background: black;
+    width: 100%;
 }
 
 .btnSend {
@@ -91,4 +95,10 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;*/
+}
+
+.wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
 }
