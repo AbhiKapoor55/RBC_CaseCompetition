@@ -68,7 +68,7 @@ def analyzeTransactionData(clientData: List[Dict], similarClients: List[List[Dic
 
 
 if __name__ == "__main__":
-    existingTransactions = readTransactionData("johnsTransactions.json")
+    existingTransactions = readTransactionData("ourScript.json")
     writeTransactionData("junweisTransactions.json", existingTransactions)
     analyzeTransactionData([], [])
     app.run(debug=True)
