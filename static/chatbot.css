@@ -15,6 +15,13 @@
   height: 10%;
 }
 
+.main {
+  text-align: left;
+  font-size: 22px; 
+  font-family: copperplate; 
+  color: black;
+}
+
 .enterMessage {
   width: 600px;
   height: 30px;
@@ -69,3 +76,11 @@
   float: left;
   color: #999;
 } 
+
+body {
+  background-image: url(./images/greybackground.jpg);
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;*/
+}
