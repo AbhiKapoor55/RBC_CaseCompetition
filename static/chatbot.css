@@ -26,16 +26,25 @@
 }
 
 .enterMessage {
-  width: 600px;
+  width: 100%;
   height: 30px;
 }
 
 .enterMessageDiv {
-    padding-left: 20%;
-    position: fixed;
-    bottom: 30px;
-    background: black;
-    width: 100%;
+    /*padding-left: 20%;*/
+    position:relative;
+    bottom: 50%;
+    top: 50%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.foot {
+    position:fixed;
+    bottom:0;
+    padding: 30px;
+    background-color: red;
+    width:80%;
 }
 
 .btnSend {
