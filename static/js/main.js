@@ -34,6 +34,7 @@ function sendMessage(e){
 function addUserMessageToDOM(e){
 
 	const textEntered = document.getElementsByClassName("enterMessage")[0].value; 
+	console.log("textentere is " + textEntered)
 
 	const newDiv = document.createElement("div")
 	newDiv.className = "container"
