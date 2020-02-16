@@ -1,0 +1,10 @@
+[
+  {"time": "2020-01-31T23:48:36.969Z", "value": 99.73, "cardNum": 234567890, "bank": "RBC", "merchant": "No Frills", "description": "Food"},
+  {"time":  "1999-08-19T23:15:30.000Z", "value": 3817.99, "cardNum": 234567890, "bank": "RBC", "merchant": "Enercare", "description":  "Heating/Cooling"},
+  {"time":  "2003-03-12T10:15:30.000Z", "value": 2345.64, "cardNum": 234567890, "bank": "RBC", "merchant": "Home-Depot", "description":  "Heating/Cooling"},
+  {"time":  "2008-03-12T10:15:30.000Z", "value": 4328.64, "cardNum": 234567890, "bank": "RBC", "merchant": "View Roofing", "description":  "Shingles replacement"},
+  {"time":  "2020-02-18T13:15:30.000Z", "value": 44.10, "cardNum": 234567890, "bank": "RBC", "merchant": "Petro-Canada", "description":  "Gas"},
+  {"time":  "2020-02-15T13:15:30.000Z", "value": 2.60, "cardNum": 234567890, "bank": "RBC", "merchant": "Tim Horton's", "description":  "Food"},
+  {"time":  "2020-02-15T23:15:30.000Z", "value": 2.60, "cardNum": 234567890, "bank": "RBC", "merchant": "Tim Horton's", "description":  "Food"},
+  {"time":  "2020-02-16T10:15:30.000Z", "value": 3.91, "cardNum": 234567890, "bank": "RBC", "merchant": "Starbucks", "description":  "Food"}
+]

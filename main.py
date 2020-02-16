@@ -13,6 +13,7 @@ compress = FlaskStaticCompress(app)
 @app.route('/', methods=['GET'])
 def home():
     """Landing page."""
+    print("Reached base redirect")
     return redirect(url_for('static', filename='index.html'))
 
 @app.route('/launchDivi', methods=['GET'])
@@ -21,4 +22,4 @@ def launchDivi():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
