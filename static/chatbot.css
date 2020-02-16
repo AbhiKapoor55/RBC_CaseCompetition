@@ -1,36 +1,57 @@
-
-.main {
-	text-align: center;
-	font-size: 26px; 
-	padding-top: 26%;  
-	font-family: copperplate; 
-	color: white;
+ /* Chat containers */
+.container {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  height: 10%;
 }
 
-.button {
-  background-color: #008CBA; 
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 10%;
-  border: 2px solid white;
-
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: #ddd;
+  height: 10%;
 }
 
-.button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-.button:active {
-  background-color: white;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+.logoRow {
+  width: 100%;
+  height: 20%;
+  padding: 5px 5px 5px 5px;
 }
 
-.btnDiv {
-	padding-left: 36%; 
+/* Style images */
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
 }
+
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+} 
