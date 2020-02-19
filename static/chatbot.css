@@ -129,4 +129,10 @@ body {
     margin-right: 10%;
     margin-bottom: 10%;
 }
+.messageContainer {
+  top:100px;
+}
 
+.hidden{
+  opacity: 0;
+}

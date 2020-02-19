@@ -1,4 +1,4 @@
-
+const log = console.log
 
 function launchDivi(e){
 	console.log("STARTING.FOR REAL..")
@@ -119,4 +119,22 @@ function deleteAllMessages(e){
 	    console.log("There was an error, ", err)
 	})
 }
+
+$(function() {
+	$(document).on("mousewheel", function() {
+	  //get elemetns by classname dot children
+	  const messageContainer = document.getElementsByClassName("messageContainer")[0]
+	  for (let i = 0; i < messageContainer.children.length; i++){ //messageContainer.children.length
+		const rect = messageContainer.children[i].getBoundingClientRect();
+		if (rect.top < 40){
+			messageContainer.children[i].style.visibility = "hidden";
+		}
+		else {
+			messageContainer.children[i].style.visibility = "visible";
+		}
+		//console.log(rect.top, rect.right, rect.bottom, rect.left);
+	  }
+
+	});
+  });
 
