@@ -48,6 +48,7 @@ function wait(ms){
 function addUserMessageToDOM(e){
 
 	const textEntered = document.getElementsByClassName("enterMessage")[0].value; 
+	document.getElementsByClassName("enterMessage")[0].value = ""; 
 	//console.log("textentere is " + textEntered)
 
 	const newDiv = document.createElement("div")

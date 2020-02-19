@@ -8,7 +8,8 @@
   height: 5%;
   width: 28%;
   font-size:12px; 
-   margin-left: 719px;
+  margin-left: 71%; 
+  /*margin-left: 719px;*/
 }
 
 /* Darker chat container */
@@ -18,7 +19,8 @@
   height: 5%;
   width: 28%;
   font-size:12px; 
-  margin-left: 719px; 
+  margin-left: 71%; 
+  /*margin-left: 719px; */
 }
 
 
