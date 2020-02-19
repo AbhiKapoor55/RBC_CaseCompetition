@@ -6,8 +6,9 @@
   padding: 10px;
   margin: 10px 0;
   height: 5%;
-  width: 30%;
-  font-size:15px; 
+  width: 28%;
+  font-size:12px; 
+   margin-left: 719px;
 }
 
 /* Darker chat container */
@@ -15,8 +16,9 @@
   border-color: #ccc;
   background-color: #ddd;
   height: 5%;
-  width: 30%;
-  font-size:15px; 
+  width: 28%;
+  font-size:12px; 
+  margin-left: 719px; 
 }
 
 
@@ -27,6 +29,7 @@
   color: black;
   padding-left: 15px;
   padding-bottom: 30px;
+  position: fixed;
 }
 
 .right {
@@ -39,7 +42,7 @@
 }
 
 .enterMessage {
-  width: 260px;
+  width: 290px;
   height: 30px;
 }
 
@@ -52,12 +55,12 @@
     float: left;
     margin-left: auto;
     margin-right: auto;
+    margin-left: 700px;
 }
 .foot {
     position:fixed;
     bottom:0;
     padding: 30px;
-    background-color: darkgray;
     width: 23%;
 }
 
