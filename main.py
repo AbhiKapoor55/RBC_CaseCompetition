@@ -56,8 +56,10 @@ def readTransactionData(fileName: str) -> List[Dict]:
     in to a list of dictionary objecst and returns it, e.g.
     [{'time': '2020-01-31T23:48:36.969Z', 'value': 99.73, 'cardNum': 234567890, 'bank': 'RBC', 'merchant': 'No Frills',
      'description': 'Food'}]"""
+    print("The filename is: ", fileName)
     try:
         with open("./static/data/" + fileName, 'r') as f:
+            print("File successfully opened to read")
             json_text = f.read()
     except:
         print("There was an invalid file name provided.")
