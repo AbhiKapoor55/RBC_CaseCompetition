@@ -73,6 +73,7 @@ function addUserMessageToDOM(e){
 
 	const container = document.getElementsByClassName("messageContainer")[0]
 	container.appendChild(newDiv)
+	checkMsgPos();
 }
 
 function addServerMessageToDOM(e){
@@ -100,6 +101,7 @@ function addServerMessageToDOM(e){
 	const container = document.getElementsByClassName("messageContainer")[0]
 	container.appendChild(newDiv)
 	//document.body.appendChild(newDiv)
+	checkMsgPos();
 }
 
 function deleteAllMessages(e){
@@ -121,20 +123,22 @@ function deleteAllMessages(e){
 }
 
 $(function() {
-	$(document).on("mousewheel", function() {
-	  //get elemetns by classname dot children
-	  const messageContainer = document.getElementsByClassName("messageContainer")[0]
-	  for (let i = 0; i < messageContainer.children.length; i++){ //messageContainer.children.length
-		const rect = messageContainer.children[i].getBoundingClientRect();
-		if (rect.top < 40){
-			messageContainer.children[i].style.visibility = "hidden";
-		}
-		else {
-			messageContainer.children[i].style.visibility = "visible";
-		}
-		//console.log(rect.top, rect.right, rect.bottom, rect.left);
-	  }
-
-	});
+	$(document).on("mousewheel", checkMsgPos)
   });
 
+function checkMsgPos(){
+const messageContainer = document.getElementsByClassName("messageContainer")[0]
+	for (let i = 0; i < messageContainer.children.length; i++){ //messageContainer.children.length
+	const rect = messageContainer.children[i].getBoundingClientRect();
+	if (rect.top < 40){
+		messageContainer.children[i].style.visibility = "hidden";
+	}
+	else if (rect.bottom > 600){
+			messageContainer.children[i].style.visibility = "hidden";
+		}
+	else {
+		messageContainer.children[i].style.visibility = "visible";
+	}
+	//console.log(rect.top, rect.right, rect.bottom, rect.left);
+	}
+}
