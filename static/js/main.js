@@ -130,7 +130,7 @@ function checkMsgPos(){
 const messageContainer = document.getElementsByClassName("messageContainer")[0]
 	for (let i = 0; i < messageContainer.children.length; i++){ //messageContainer.children.length
 		const rect = messageContainer.children[i].getBoundingClientRect();
-		if (rect.top < 56){
+		if (rect.top < 40){
 			messageContainer.children[i].style.visibility = "hidden";
 		}
 		else if (rect.bottom > 600){
@@ -142,3 +142,15 @@ const messageContainer = document.getElementsByClassName("messageContainer")[0]
 		console.log(rect.top, rect.right, rect.bottom, rect.left);
 	}
 }
+
+// $( "body" ).keypress(function() {
+
+// 	sendMessage();
+//   });
+
+$('input[type=text]').on('keydown', function(e) {
+    if (e.which == 13) {
+		e.preventDefault();
+		sendMessage();
+    }
+});
