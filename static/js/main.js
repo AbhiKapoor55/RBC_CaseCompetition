@@ -129,16 +129,16 @@ $(function() {
 function checkMsgPos(){
 const messageContainer = document.getElementsByClassName("messageContainer")[0]
 	for (let i = 0; i < messageContainer.children.length; i++){ //messageContainer.children.length
-	const rect = messageContainer.children[i].getBoundingClientRect();
-	if (rect.top < 40){
-		messageContainer.children[i].style.visibility = "hidden";
-	}
-	else if (rect.bottom > 600){
+		const rect = messageContainer.children[i].getBoundingClientRect();
+		if (rect.top < 56){
 			messageContainer.children[i].style.visibility = "hidden";
 		}
-	else {
-		messageContainer.children[i].style.visibility = "visible";
-	}
-	//console.log(rect.top, rect.right, rect.bottom, rect.left);
+		else if (rect.bottom > 600){
+				messageContainer.children[i].style.visibility = "hidden";
+		}
+		else {
+			messageContainer.children[i].style.visibility = "visible";
+		}
+		console.log(rect.top, rect.right, rect.bottom, rect.left);
 	}
 }
